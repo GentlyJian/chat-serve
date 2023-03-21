@@ -16,7 +16,7 @@ const chatApi = new ChatGPTAPI({
 router.get("/chat", async (ctx, next) => {
     // 获取请求中的参数
     const { message } = ctx.request.query;
-    console.log(message)
+    console.log(message) 
   try {
     const ret =await chatApi.sendMessage(message);
     const {id,parentMessageId, text} = ret
