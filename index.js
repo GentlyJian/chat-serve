@@ -21,9 +21,10 @@ router.get("/chat", async (ctx, next) => {
     const ret =await chatApi.sendMessage(message);
     const {id,parentMessageId, text} = ret
     // 将生成的内容返回给客户端
-    ctx.success({id,parentMessageId, text})
+    ctx.body = {id,parentMessageId, text}
   }catch(err) {
-    ctx.success({message: 'error'})
+    console.log(err)
+    ctx.body = {message: 'error'}
   }
 });
 
