@@ -39,6 +39,6 @@ router.post("/chat", async (ctx, next) => {
 app.use(router.routes()).use(router.allowedMethods());
 
 // 启动服务器
-app.listen(process.env.PORT || '3001', () => {
-    console.log("Server is listening on port " + (process.env.PORT || '3001'));
+app.listen(process.env.PORT || '3000', () => {
+    console.log("Server is listening on port " + (process.env.PORT || '3000'));
 });
