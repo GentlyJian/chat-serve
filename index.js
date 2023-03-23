@@ -23,7 +23,7 @@ router.post("/chat", async (ctx, next) => {
     // 获取请求中的参数
     const { message,parentMessageId } = ctx.request.body;
     console.log(message) 
-    const pamras = parentMessageId ? [message, { parentMessageId, timeoutMs: 60 * 1000}] : [message,{timeoutMs: 60 * 1000}]
+    const pamras = parentMessageId ? [message, { parentMessageId, timeoutMs: 2 * 60 * 1000}] : [message,{timeoutMs: 2 * 60 * 1000}]
   try {
     const ret =await chatApi.sendMessage(...pamras);
     const {id,parentMessageId, text} = ret
