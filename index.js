@@ -31,7 +31,7 @@ router.post("/chat", async (ctx, next) => {
     ctx.body = {id, parentMessageId, text, code:0}
   }catch(err) {
     console.log(err)
-    ctx.body = {message: 'error',code:-1}
+    ctx.body = {message: 'error',code:-1} 
   }
 });
 
